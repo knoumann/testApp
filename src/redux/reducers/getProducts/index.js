@@ -13,8 +13,6 @@ export const getProductsSlice = createSlice({
      * GetRoles Request
      */
     getProductsRequest: (state, action) => {
-      console.log('🚀 ~ file: index.js:39 ~ action:', action);
-
       state.isLoading =
         action.payload.page === 1 && !action?.payload?.refresh ? true : false;
       state.error = null;

@@ -26,10 +26,6 @@ function* handleProductsData(action) {
   try {
     const response = yield call(fetchProducts, action);
     const {data = {}} = response;
-    console.log(
-      '🚀 ~ file: index.js:29 ~ function*handleProductsData ~ response:',
-      response,
-    );
     genericMsg = response?.message || DEFAULT_ERROR_STRING;
     if (response.status === API_RESPONSE_SUCCESS) {
       yield put(getProductsSuccess({data, page: action?.payload?.page}));

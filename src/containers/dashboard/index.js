@@ -60,7 +60,7 @@ const Dashboard = () => {
 
   //Showin loader when next page loads
   const renderFooter = useCallback(() => {
-    return loadMore ? <Loader size={SMALL} isLoading={loadMore} /> : null;
+    return !loadMore ? <Loader size={SMALL} isLoading={!loadMore} /> : null;
   }, [page]);
   return (
     <>
